@@ -1,12 +1,33 @@
 <template>
     <section class="content">
-        il mio contenuto
+        <div class="container">
+            <MyCard />
+            <MyCard />
+            <MyCard />
+            <MyCard />
+            <MyCard />
+            <MyCard />
+            <MyCard />
+            <MyCard />
+            <MyCard />
+            <MyCard />
+
+        </div>
     </section>
 </template>
 
 <script>
+import MyCard from '@/components/MyCard'
     export default {
         name:'MyContent',
+
+        components: {
+            MyCard,
+        },
+
+        data(){
+            
+        }
 
 
     }
@@ -19,5 +40,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 40px 0;
+
+
+        .container{
+            width: 1170px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
     }
 </style>
