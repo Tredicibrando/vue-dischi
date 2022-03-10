@@ -16,10 +16,6 @@ import MyContent from '@/components/MyContent'
                 MyHeader,
                 MyContent,
         },
-
-        data(){
-
-        }
     }
 </script>
 

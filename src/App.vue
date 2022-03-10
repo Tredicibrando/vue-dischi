@@ -8,6 +8,7 @@
 import MyMain from '@/components/MyMain'
 
 
+
 export default {
   name: 'App',
   components: {
@@ -22,6 +23,10 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+img{
+  max-width: 100%;
 }
 
 #app {

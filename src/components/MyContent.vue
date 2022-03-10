@@ -18,17 +18,36 @@
 
 <script>
 import MyCard from '@/components/MyCard'
+import axios from 'axios'
+
     export default {
         name:'MyContent',
+
 
         components: {
             MyCard,
         },
 
         data(){
-            
-        }
+            return{
+                discs: [],
+            }
+        },
 
+        methods: {
+            getDisc: function(){
+                    axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+                    .then( res =>{
+                        // console.log(res.data.response)
+                        this.discs= res.data.response
+                        console.log(this.discs)
+                    })
+                }
+        },
+
+        created(){
+            this.getDisc()
+        },
 
     }
 </script>
