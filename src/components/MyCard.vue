@@ -1,13 +1,13 @@
 <template>
     <div class="card">
         <figure class="disc_wrapper">
-            <img class="disc" src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
+            <img class="disc" :src="element.poster" alt="">
         </figure>
 
         <div class="card_text_wrapper">
-            <h4 class="title">Ten summoners names dio</h4>
-            <p class="author">Max Felicitas</p>
-            <p class="year">1988</p>
+            <h4 class="title">{{element.title}}</h4>
+            <p class="author">{{element.author}}</p>
+            <p class="year">{{element.year}}</p>
         </div>
     </div>
 </template>
@@ -17,7 +17,11 @@
         name: 'MyCard',
         
         props:{
-            
+
+            element:{
+                type: Object,
+                require: true,
+            }
         }
 
 
@@ -41,6 +45,8 @@
 
         img{
             width: 100%;
+            height: 100%;
+            aspect-ratio: 1/1;
             object-position: center;
             object-fit: cover;
         }

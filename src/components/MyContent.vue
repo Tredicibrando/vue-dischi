@@ -1,16 +1,7 @@
 <template>
     <section class="content">
         <div class="container">
-            <MyCard />
-            <MyCard />
-            <MyCard />
-            <MyCard />
-            <MyCard />
-            <MyCard />
-            <MyCard />
-            <MyCard />
-            <MyCard />
-            <MyCard />
+            <MyCard v-for="(element,i) in discs" :key="i" :element="element" />
 
         </div>
     </section>
@@ -39,7 +30,7 @@ import axios from 'axios'
                     axios.get('https://flynn.boolean.careers/exercises/api/array/music')
                     .then( res =>{
                         // console.log(res.data.response)
-                        this.discs= res.data.response
+                        this.discs = res.data.response;
                         console.log(this.discs)
                     })
                 }
