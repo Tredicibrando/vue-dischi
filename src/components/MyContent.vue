@@ -1,7 +1,8 @@
 <template>
     <section class="content">
         <div class="container">
-            <MyCard v-for="(element,i) in discs" :key="i" :element="element" />
+            
+            <MyCard v-for="(element,i) in filteredDisc" :key="i" :element="element" />
 
         </div>
     </section>
@@ -11,6 +12,7 @@
 import MyCard from '@/components/MyCard'
 import axios from 'axios'
 
+
     export default {
         name:'MyContent',
 
@@ -19,10 +21,26 @@ import axios from 'axios'
             MyCard,
         },
 
+        props:{
+            filter:{
+                type:String,
+            }
+        },
+
         data(){
             return{
                 discs: [],
             }
+        },
+
+        computed: {
+            filteredDisc: function(){
+                return this.discs.filter( (el) => {
+
+                    const { genre } = el
+                    return genre.toLowerCase().includes( this.filter.toLowerCase() )
+                } )
+            },
         },
 
         methods: {

@@ -1,7 +1,7 @@
 <template>
     <main>
-        <MyHeader />
-        <MyContent />
+        <MyHeader @input="setFilter" />
+        <MyContent :filter="selectedFiltrata"/>
     </main>
 </template>
 
@@ -15,6 +15,21 @@ import MyContent from '@/components/MyContent'
         components:{
                 MyHeader,
                 MyContent,
+        },
+
+        data(){
+            return{
+                selectedFiltrata: '',
+            }
+            
+        },
+
+        methods:{
+            setFilter: function(selected){
+                
+                this.selectedFiltrata = selected;
+                console.log(this.selectedFiltrata)
+            }
         },
     }
 </script>
